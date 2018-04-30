@@ -6,7 +6,6 @@ Created on Sat Apr 21 19:37:45 2018
 """
 import csv
 import requests
-import plotly.plotly as py
 from bs4 import BeautifulSoup
 import plotly.graph_objs as go
 
@@ -36,11 +35,7 @@ for row in table.find_all('tr'):
     data.append([Date, Open, High, Low, Close, Volume, MarketCap])
 
 for item in data:
-    print(item)
-
-trace = go.Table(header=dict(values=['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'MarketCap']), cells=dict(values=data))
-dta = [trace] 
-py.iplot(dta, filename = 'basic_table')        
+    print(item)      
     
 f = open('ScrapedData.csv', 'w')
 with f:
