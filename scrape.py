@@ -4,10 +4,15 @@
 Created on Sat Apr 21 19:37:45 2018
 @author: kogito
 """
+import csv
 import requests
+import plotly.plotly as py
 from bs4 import BeautifulSoup
+import plotly.graph_objs as go
 
-r = requests.get('https://coinmarketcap.com/currencies/tron/historical-data/?start=20130428&end=20180421')
+
+url = input('Insert your URL example(https://coinmarketcap.com/currencies/bitcoin/historical-data/...):\n')  
+r = requests.get(url)
 soup = BeautifulSoup(r.text, 'lxml')
 
 data = []
@@ -28,9 +33,19 @@ for row in table.find_all('tr'):
         MarketCap = values[6]
     except IndexError:
         continue
-    data.append((Date, Open, High, Low, Close, Volume, MarketCap))
-
+    data.append([Date, Open, High, Low, Close, Volume, MarketCap])
 
 for item in data:
     print(item)
+
+trace = go.Table(header=dict(values=['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'MarketCap']), cells=dict(values=data))
+dta = [trace] 
+py.iplot(dta, filename = 'basic_table')        
     
+f = open('ScrapedData.csv', 'w')
+with f:
+    writer = csv.writer(f)
+    writer.writerow(['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'MarketCap'])
+
+    for row in data:
+        writer.writerow(row)
