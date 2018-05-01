@@ -7,7 +7,6 @@ Created on Sat Apr 21 19:37:45 2018
 import csv
 import requests
 from bs4 import BeautifulSoup
-import plotly.graph_objs as go
 
 
 class Scraper():
@@ -15,7 +14,7 @@ class Scraper():
     def process(self, url):
         r = requests.get(url)
         soup = BeautifulSoup(r.text, 'lxml')
-        
+       
         data = []
         table = soup.find('table', id='')
         for row in table.find_all('tr'):
@@ -35,7 +34,7 @@ class Scraper():
             except IndexError:
                 continue
             data.append([Date, Open, High, Low, Close, Volume, MarketCap])
-        
+        # Print data
         for item in data:
             print(item)
         return data
