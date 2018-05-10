@@ -44,6 +44,6 @@ class Scraper():
         with f:
             writer = csv.writer(f)
             writer.writerow(['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'MarketCap'])
-        
+
             for row in data:
                 writer.writerow(row)
