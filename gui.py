@@ -29,27 +29,27 @@ class MainWindow(tk.Tk):
         ttk.Style().map("TNotebook.Tab",
                         background=[("selected", colors[0])],
                         foreground=[("selected", colors[1])])
-        
         self.option_add("*Font", "courier")
+        # Define input section frames
         self.frame = LabelFrame(self, text="", bg="black", fg='white')
         self.label_frame = tk.Frame(self.frame, bg="black")
         self.input_frame = tk.Frame(self.frame, bg="black")
-        
+        # Pack widgets
         self.frame.pack(expand=1, fill="both", padx=5, pady=5)
         self.label_frame.pack(expand=1, fill="both", padx=5, pady=2)
         self.input_frame.pack(expand=1, fill="both", padx=10, pady=2)
-        
+        # Set label widget up
         self.label = Label(self.label_frame, bg="black", fg='white',
                            text='Coinmarketcap historical data URL to scrape from: (example:https://coinmarketcap.com/currencies/bitcoin/historical-data/...)')
         self.entry = Entry(self.input_frame, width=110)
         self.label.pack(side=tk.LEFT)
         self.entry.pack(side=tk.LEFT)
-        
+        # Set button widget up
         b2 = tk.Button(self.input_frame, text='Scrape', command=self.get_input)
         b2.pack(side=tk.RIGHT, pady=5)
         b2.configure(background="black", foreground='white',
                      activebackground='#0080ff', activeforeground='white')
-        
+        # Create menu and call mainloop
         self.create_menu()
         self.mainloop()
 
