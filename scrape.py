@@ -10,11 +10,10 @@ from bs4 import BeautifulSoup
 
 
 class Scraper():
-
+    @classmethod
     def process(self, url):
         r = requests.get(url)
         soup = BeautifulSoup(r.text, 'lxml')
-       
         data = []
         table = soup.find('table', id='')
         for row in table.find_all('tr'):
@@ -23,7 +22,7 @@ class Scraper():
             for cell in cells:
                 value = cell.string
                 values.append(value)
-            try: 
+            try:
                 Date = values[0]
                 Open = values[1]
                 High = values[2]
@@ -38,7 +37,8 @@ class Scraper():
         for item in data:
             print(item)
         return data
-        
+
+    @classmethod
     def write_to_csv(self, data):
         f = open('ScrapedData.csv', 'w')
         with f:
