@@ -124,20 +124,6 @@ div.body {
 	min-width: 45%;
 	max-width: 100%;
 }
-div.sub-title-menu {
-	width: 100%;
-	margin: 5px 0 25px 0;
-	padding: 0 0 0 0;
-	color: var(--main-text-color);
-	background-color: var(--main-background-color);
-	font-feature-settings: "kern"on;
-	font-family: "neon";
-	font-size: 16px;
-	min-width: 35%;
-	max-width: 100%;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
 .main-content {
     max-width: 1090px;
 		min-width: 650px;
@@ -185,7 +171,7 @@ th {
 /* menu css */
 div.sub-title-menu {
     width: 100%;
-    margin: 5px 0 0 0;
+    margin: 5px 0 25px 0;
     padding: 0 0 0 0;
     color: var(--main-text-color);
     background-color: var(--main-background-color);
