@@ -92,6 +92,8 @@ div {
 	font-size: 16px;
 	min-width: 5px;
 	max-width: inherit;
+}
+div.highlight {
 	border-radius: 5px;
 }
 div.document {
@@ -220,7 +222,7 @@ div.sub-title-menu a {
     letter-spacing: .05em;
     margin-left: 0;
 }
-h2 {
+h1, h2, h3, h4 {
 	color: var(--main-text-color);
 	background-color: var(--main-background-color);
 }
