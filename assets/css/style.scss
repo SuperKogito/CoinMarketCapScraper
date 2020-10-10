@@ -92,6 +92,7 @@ div {
 	font-size: 16px;
 	min-width: 5px;
 	max-width: inherit;
+	border-radius: 5px;
 }
 div.document {
 	width: inherit;
@@ -123,7 +124,7 @@ div.body {
 }
 div.sub-title-menu {
 	width: 100%;
-	margin: 0 0 0 0;
+	margin: 5px 0 25px 0;
 	padding: 0 0 0 0;
 	color: var(--main-text-color);
 	background-color: var(--main-background-color);
@@ -167,6 +168,7 @@ th {
     text-align: left;
     padding-right: 5px;
     font-size: 16px;
+		border-bottom: none;
 }
 .project-name {
 	margin-bottom: 0px;
@@ -217,4 +219,8 @@ div.sub-title-menu a {
     font-size: 16px;
     letter-spacing: .05em;
     margin-left: 0;
+}
+h2 {
+	color: var(--main-text-color);
+	background-color: var(--main-background-color);
 }
