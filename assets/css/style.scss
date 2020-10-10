@@ -1,7 +1,7 @@
 ---
 ---
 
-@import 'theme: jekyll-theme-minimal';
+@import "{{ site.theme }}";
 @font-face {
 	font-family: 'neon';
 	font-style: normal;
