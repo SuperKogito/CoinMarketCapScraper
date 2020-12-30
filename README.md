@@ -41,4 +41,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 * The nameless heros of Stackoverflow
-* etc
