@@ -6,15 +6,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 In order to excute this code you will need the following python 3 packages:
-* tkinter module
+* [tkinter](https://docs.python.org/3/library/tkinter.html) module
 ```
 sudo apt-get install python3-tk
 ```
-* BeautifulSoup module
+* [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) module
 ```
 sudo pip install beautifulsoup4
 ```
-* requests module
+* [requests](https://docs.python-requests.org/en/master/) module
 ```
 sudo pip install requests
 ```
